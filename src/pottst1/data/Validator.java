@@ -11,6 +11,7 @@ import java.util.Scanner;
 *
 *
 */
+
 public class Validator
 {
 //  UPCs Can only be 8 digits
@@ -72,4 +73,4 @@ public class Validator
 /*  Item descriptions are no longer than 30 characters, including
     whitespace. They may not include special characters or
     punctuation.*/
-}
+

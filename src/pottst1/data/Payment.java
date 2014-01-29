@@ -2,7 +2,7 @@ package pottst1.data;
 
 import java.math.BigDecimal;
 
-public class Payment
+abstract class Payment
 {
     public static final BigDecimal TAX_RATE = new BigDecimal(0.06);
 
