@@ -1,4 +1,4 @@
-package pottst1.data;
+package pottst1.display;
 
 /*         ====================================================
 *          # Name: Teresa Potts (POTTST1)
@@ -17,18 +17,20 @@ public class Login
 /* This method is for getting the input of the username from the user. Eventually I will need a validator class to call
 to verify that the username is 6-12 alphanumeric characters long as per the spec document.*/
 
-	private static String username(String[] args)
+	public static String username(String[] args)
 	{
 
 		//Will use this boolean more when actually validating the password.
 		boolean isValid = false;
 
-		String username = "";
+		String username = "employee";
 		Scanner sc = new Scanner(System.in);
 
 		//Change to !isValid once you have more of a list to compare to.
 		while (!isValid)
 		{
+			System.out.println("Login Display");
+			System.out.println();
 
 			System.out.print("Enter your username: ");
 			username = sc.next();
@@ -54,32 +56,32 @@ to verify that the username is 6-12 alphanumeric characters long as per the spec
    easily stolen as a security feature. Eventually we want to validate the password is correct and meets the specs
    doc of 8-20 characters long including letters, numbers, and special characters. */
 
-	public static String password(String[] args)
+	public static char password()
 	{
 
 		Scanner sc = new Scanner(System.in);
 
-		String password = "";
+		char[] password = "password";
 
 		boolean isValid = false;
 
 		while (!isValid)
 		{
 			System.out.print("Enter your password: ");
-			password = sc.next();
+			password = sc.next().toCharArray();
 
 			if (password.equals(""))
 			{
 				System.out.println("Error! Password is required. Try again.");
 			}
-			if (!password.equalsIgnoreCase("password"))
+			if (password.equals("password"))
 			{
-
-				System.out.println("Error! Password is invalid. Try again.");
+				isValid = true;
 			}
 			else
 			{
-				isValid = true;
+
+				System.out.println("Error! Password is invalid. Try again.");
 			}
 		}
 		return password;
