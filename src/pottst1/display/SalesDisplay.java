@@ -12,7 +12,7 @@ package pottst1.display;
 
 public class SalesDisplay
 {
-	public static void main(String[] args){
+	public static void initialDisplay(String[] args){
 
 		System.out.println("Sales Display\n");
 

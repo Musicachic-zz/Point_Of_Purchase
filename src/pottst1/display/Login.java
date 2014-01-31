@@ -17,6 +17,7 @@ public class Login
 /* This method is for getting the input of the username from the user. Eventually I will need a validator class to call
 to verify that the username is 6-12 alphanumeric characters long as per the spec document.*/
 
+
 	public static String username(String[] args)
 	{
 
@@ -56,12 +57,12 @@ to verify that the username is 6-12 alphanumeric characters long as per the spec
    easily stolen as a security feature. Eventually we want to validate the password is correct and meets the specs
    doc of 8-20 characters long including letters, numbers, and special characters. */
 
-	public static char password()
+	public static char[] password()
 	{
 
 		Scanner sc = new Scanner(System.in);
 
-		char[] password = "password";
+		char[] password = "password".toCharArray();
 
 		boolean isValid = false;
 
