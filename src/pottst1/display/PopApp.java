@@ -9,11 +9,14 @@ package pottst1.display;
 *
 *
 */
+import pottst1.display.SalesDisplay;
 
 public class PopApp
 {
 	public static void main(String[]args)
 	{
-
+		Login.username();
+		Login.password();
+		SalesDisplay.initialDisplay();
 	}
 }

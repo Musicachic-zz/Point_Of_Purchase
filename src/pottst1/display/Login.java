@@ -18,7 +18,7 @@ public class Login
 to verify that the username is 6-12 alphanumeric characters long as per the spec document.*/
 
 
-	public static String username(String[] args)
+	public static String username()
 	{
 
 		//Will use this boolean more when actually validating the password.
@@ -36,11 +36,11 @@ to verify that the username is 6-12 alphanumeric characters long as per the spec
 			System.out.print("Enter your username: ");
 			username = sc.next();
 
-			if (username.equals(""))
+			if (username.isEmpty())
 			{
 				System.out.println("Error! Username is required. Try again.");
 			}
-			if (!username.equalsIgnoreCase("employee"))
+			else if (!username.equalsIgnoreCase("employee"))
 			{
 				System.out.println("Error! Username doesn't exist. Try again.");
 			}
