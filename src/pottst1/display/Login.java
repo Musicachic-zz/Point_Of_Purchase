@@ -10,6 +10,9 @@ package pottst1.display;
 *
 */
 
+import pottst1.data.Employee;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Login
@@ -21,20 +24,21 @@ to verify that the username is 6-12 alphanumeric characters long as per the spec
 	public static String username()
 	{
 
+		Employee employee = new Employee();
 		//Will use this boolean more when actually validating the password.
 		boolean isValid = false;
 
-		String username = "employee";
+		String username = "";
 		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Login Display");
+		System.out.println();
 
 		//Change to !isValid once you have more of a list to compare to.
 		while (!isValid)
 		{
-			System.out.println("Login Display");
-			System.out.println();
-
 			System.out.print("Enter your username: ");
-			username = sc.next();
+			username = sc.nextLine();
 
 			if (username.isEmpty())
 			{
@@ -57,24 +61,27 @@ to verify that the username is 6-12 alphanumeric characters long as per the spec
    easily stolen as a security feature. Eventually we want to validate the password is correct and meets the specs
    doc of 8-20 characters long including letters, numbers, and special characters. */
 
-	public static char[] password()
+	public static String password()
 	{
 
 		Scanner sc = new Scanner(System.in);
 
-		char[] password = "password".toCharArray();
+		String password = null;
+		//char[] pass = "password".toCharArray();
 
 		boolean isValid = false;
 
 		while (!isValid)
 		{
 			System.out.print("Enter your password: ");
-			password = sc.next().toCharArray();
+			password = sc.nextLine();
 
-			if (password.equals(""))
+/*			if (password.equals(""))
 			{
 				System.out.println("Error! Password is required. Try again.");
-			}
+			}*/
+
+			//Tried to implement using in char[] but confused the hell out of me. Will need to get help on this.
 			if (password.equals("password"))
 			{
 				isValid = true;

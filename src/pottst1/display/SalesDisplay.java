@@ -27,10 +27,12 @@ public class SalesDisplay
 		if (salesDisplayChoice.equalsIgnoreCase("Add"))
 		{
 			System.out.println("You selected Add");
+			addDisplay();
 		}
 		if (salesDisplayChoice.equalsIgnoreCase("Remove"))
 		{
 			System.out.println("You selected Remove");
+			removeDisplay();
 		}
 		if (salesDisplayChoice.equalsIgnoreCase("Exit"))
 		{
@@ -42,26 +44,30 @@ public class SalesDisplay
 		public static String addDisplay(){
 
 		Product product = new Product();
-		Scanner sc = new Scanner(System.in);
 
 
+		String upc = product.getUpc();
+		//product.setUpc(upc);
+		boolean isValid = false;
 
-		String upc = null;
+		while (!isValid){
 
-		while (upc == null){
-			System.out.println("Enter a UPC code: ");
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter a UPC code: ");
 			upc = sc.next();
+			//upc = product.getUpc();
 
-			if (upc.equals(""))
+			if (upc.isEmpty())
 			{
-				System.out.println("Error! UPC must be entered.");
+				System.out.print("Error! UPC must be entered. ");
 			}
-			if (!upc.equalsIgnoreCase("12345678")){
+			else if (!upc.equals("12345678")){
 
-				System.out.println("Error! UPC doesn't exisst");
+				System.out.print("Error! UPC doesn't exist ");
 			}
 			else{
 				upc = "12345678";
+
 			}
 		}
 			return upc;
@@ -86,7 +92,7 @@ public class SalesDisplay
 			}
 			if (!upc.equalsIgnoreCase("12345678")){
 
-				System.out.println("Error! UPC doesn't exisst");
+				System.out.println("Error! UPC doesn't exist");
 			}
 			else{
 				upc = "12345678";
