@@ -10,9 +10,9 @@ package pottst1.display;
 *
 */
 
-import java.util.Scanner;
 import pottst1.data.Product;
-import pottst1.display.InvoiceDisplay;
+
+import java.util.Scanner;
 
 public class SalesDisplay
 {
