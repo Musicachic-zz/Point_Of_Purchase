@@ -55,8 +55,16 @@ public class SalesDisplay
 
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter a UPC code: ");
-			upc = sc.next();
+			upc = sc.nextLine();
 			//upc = product.getUpc();
+			Product[] arrayProducts = new Product[Integer.parseInt(upc)];
+
+			for (Product arrayProduct : arrayProducts)
+			{
+				if(arrayProduct.setUpc().equals(upc)){
+					arrayProduct = upc;
+				}
+			}
 
 			if (upc.isEmpty())
 			{
