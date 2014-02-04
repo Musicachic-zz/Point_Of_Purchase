@@ -61,11 +61,13 @@ public class SalesDisplay
 
 			for (Product arrayProduct : arrayProducts)
 			{
-				if(arrayProduct.setUpc().equals(upc)){
-					arrayProduct = upc;
+				if(arrayProduct.getUpc().equals(upc)){
+					arrayProducts = upc;
+					break;
 				}
-			}
 
+			}
+/*
 			if (upc.isEmpty())
 			{
 				System.out.print("Error! UPC must be entered. ");
@@ -78,6 +80,9 @@ public class SalesDisplay
 				upc = "12345678";
 				InvoiceDisplay.add();
 
+			}*/
+			if(arrayProducts == null){
+				System.out.print("Error! UPC doesn't exist ");
 			}
 		}
 			return upc;
