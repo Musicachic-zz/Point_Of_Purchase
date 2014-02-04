@@ -18,5 +18,6 @@ public class PopApp
 		Login.username();
 		Login.password();
 		SalesDisplay.initialDisplay();
+		InvoiceDisplay.add();
 	}
 }

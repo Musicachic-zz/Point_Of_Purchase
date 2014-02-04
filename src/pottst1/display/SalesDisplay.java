@@ -12,6 +12,7 @@ package pottst1.display;
 
 import java.util.Scanner;
 import pottst1.data.Product;
+import pottst1.display.InvoiceDisplay;
 
 public class SalesDisplay
 {
@@ -67,6 +68,7 @@ public class SalesDisplay
 			}
 			else{
 				upc = "12345678";
+				InvoiceDisplay.add();
 
 			}
 		}
