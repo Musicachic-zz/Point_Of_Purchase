@@ -12,6 +12,8 @@ package pottst1.data;
 
 public class ProductList
 {
+	public ProductList[] getProducts;
+
 	public Product[] getProducts()
 	{
 		Product[] products = new Product[4];

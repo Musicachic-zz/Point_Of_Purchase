@@ -16,7 +16,7 @@ import java.util.Arrays;
 
 public class InvoiceDisplay
 {
-	public static void add()
+	/*public static void add()
 	{
 
 	String upc = SalesDisplay.addDisplay();
@@ -25,14 +25,11 @@ public class InvoiceDisplay
 
 	//arrayProducts[i] = SalesDisplay.addDisplay();
 
-
-		Arrays.sort(arrayProducts);
-
 		for (Product arrayProduct : arrayProducts)
 		{
 			int i = 0;
 			System.out.println(arrayProducts[i].getUpc());
 		}
-	}
+	}*/
 
 }

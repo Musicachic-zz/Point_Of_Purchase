@@ -1,21 +1,30 @@
-package pottst1.display;
-
 /*         ====================================================
 *          # Name: Teresa Potts (POTTST1)
 *          # Date: 1/30/14
 *          # Course Name: CITP 290
-*          # Description: 
+*          # Description:
 *          ====================================================
 *
 *
 */
 
-import pottst1.data.Product;
+package pottst1.display;
+
+import pottst1.data.*;
 
 import java.util.Scanner;
 
+/**
+ * Describe what the class actually does here for the javadoc.
+ *
+ * @author pottst1
+ */
+
 public class SalesDisplay
 {
+	/**
+	 * Describe what this method does for the javadoc.
+	 */
 	public static void initialDisplay(){
 
 		System.out.println("Sales Display\n");
@@ -42,12 +51,12 @@ public class SalesDisplay
 		}
 	}
 
-		public static String addDisplay(){
+		public static ProductList addDisplay(){
 
-		Product product = new Product();
+		//Product product = new Product();
+		ProductList tempProdList = new ProductList();
 
-
-		String upc = product.getUpc();
+		//String upc = product.getUpc();
 		//product.setUpc(upc);
 		boolean isValid = false;
 
@@ -55,68 +64,55 @@ public class SalesDisplay
 
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter a UPC code: ");
-			upc = sc.nextLine();
-			//upc = product.getUpc();
-			Product[] arrayProducts = new Product[Integer.parseInt(upc)];
+			String upc = sc.nextLine();
 
-			for (Product arrayProduct : arrayProducts)
+			for (Product p : tempProdList.getProducts())
 			{
-				if(arrayProduct. ){
-					arrayProducts.add(upc);
+				if(p.getUpc().equals(upc) ){
+					isValid = true;
 					break;
+				}
+				else {
+					System.out.println("Error! The UPC code was not found.");
 				}
 
 			}
-/*
-			if (upc.isEmpty())
-			{
-				System.out.print("Error! UPC must be entered. ");
-			}
-			else if (!upc.equals("12345678")){
-
-				System.out.print("Error! UPC doesn't exist ");
-			}
-			else{
-				upc = "12345678";
-				InvoiceDisplay.add();
-
-			}*/
-			if(arrayProducts == null){
-				System.out.print("Error! UPC doesn't exist ");
-			}
 		}
-			return upc;
+			return tempProdList;
 		}
 
-	public static String removeDisplay(){
+	public static ProductList removeDisplay(){
 
-		Product product = new Product();
+		//Product product = new Product();
 		Scanner sc = new Scanner(System.in);
 
+		ProductList tempProdList = new ProductList();
 
+		boolean isValid = false;
 
-		String upc = null;
+		//String upc = null;
 
-		while (upc == null){
-			System.out.println("Enter a UPC code: ");
-			upc = sc.next();
+		while (!isValid){
+			sc = new Scanner(System.in);
+			System.out.print("Enter a UPC code: ");
+			String upc = sc.nextLine();
 
-			if (upc.equals(""))
+			for (Product p : tempProdList.getProducts())
 			{
-				System.out.println("Error! UPC must be entered.");
-			}
-			if (!upc.equalsIgnoreCase("12345678")){
+				if(p.getUpc().equals(upc) ){
+					isValid = true;
+					break;
+				}
+				else {
+					System.out.println("Error! The UPC code was not found.");
+				}
 
-				System.out.println("Error! UPC doesn't exist");
-			}
-			else{
-				upc = "12345678";
 			}
 		}
-		return upc;
-
+		return tempProdList;
 	}
 }
+
 
 
 
