@@ -61,8 +61,8 @@ public class SalesDisplay
 
 			for (Product arrayProduct : arrayProducts)
 			{
-				if(arrayProduct.getUpc().equals(upc)){
-					arrayProducts = upc;
+				if(arrayProduct. ){
+					arrayProducts.add(upc);
 					break;
 				}
 

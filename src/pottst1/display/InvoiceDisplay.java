@@ -10,9 +10,8 @@ package pottst1.display;
 *
 */
 
-import pottst1.data.Product;
+import pottst1.data.*;
 import pottst1.display.SalesDisplay;
-
 import java.util.Arrays;
 
 public class InvoiceDisplay
@@ -21,6 +20,7 @@ public class InvoiceDisplay
 	{
 
 	String upc = SalesDisplay.addDisplay();
+	ProductList list = new ProductList();
 	Product[] arrayProducts = new Product[Integer.parseInt(upc)];
 
 	//arrayProducts[i] = SalesDisplay.addDisplay();
