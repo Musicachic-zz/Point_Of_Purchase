@@ -1,6 +1,7 @@
 package pottst1.data;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 
 public class Product
 {
@@ -59,4 +60,12 @@ public class Product
     {
         this.numInStock = numInStock;
     }
+
+	@Override
+	public String toString()
+	{
+		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		return description + " " + nf.format(price) + "x" + quantity + "=" +
+				       nf.format(price.multiply(new BigDecimal(quantity)));
+	}
 }

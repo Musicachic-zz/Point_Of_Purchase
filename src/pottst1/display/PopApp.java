@@ -10,6 +10,7 @@ package pottst1.display;
 *
 */
 import pottst1.display.SalesDisplay;
+import pottst1.display.InvoiceDisplay;
 
 public class PopApp
 {
@@ -18,6 +19,7 @@ public class PopApp
 		Login.username();
 		Login.password();
 		SalesDisplay.initialDisplay();
+		InvoiceDisplay.add();
 		//InvoiceDisplay.add();
 	}
 }

@@ -16,20 +16,34 @@ import java.util.Arrays;
 
 public class InvoiceDisplay
 {
-	/*public static void add()
+
+	private ProductList tempProdList;
+	private Product[] invoice;
+	private int invoiceSize;
+
+	public InvoiceDisplay(ProductList tempProdList){
+		this.tempProdList=tempProdList;
+		invoice = new Product[1000];
+		invoiceSize=0;
+	}
+
+	public static void add()
 	{
+		System.out.println("______________________________");
 
-	String upc = SalesDisplay.addDisplay();
-	ProductList list = new ProductList();
-	Product[] arrayProducts = new Product[Integer.parseInt(upc)];
 
-	//arrayProducts[i] = SalesDisplay.addDisplay();
-
-		for (Product arrayProduct : arrayProducts)
+/*		for (int i = 0; i < invoice.length; i++)
 		{
-			int i = 0;
-			System.out.println(arrayProducts[i].getUpc());
+			System.out.println(invoice[i]);
+		}*/
+
+		for (Product anInvoice : invoice)
+		{
+			System.out.println(anInvoice);
 		}
-	}*/
+
+		System.out.println("______________________________");
+		System.out.println();
+	}
 
 }
