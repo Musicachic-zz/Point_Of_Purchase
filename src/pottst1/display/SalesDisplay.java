@@ -12,6 +12,7 @@ package pottst1.display;
 
 import pottst1.data.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -25,6 +26,9 @@ public class SalesDisplay
 	/**
 	 * Describe what this method does for the javadoc.
 	 */
+
+
+
 	public static void initialDisplay(){
 
 		System.out.println("Sales Display\n");
@@ -50,14 +54,11 @@ public class SalesDisplay
 			System.exit(0);
 		}
 	}
+	private Product[] invoiceList;
+	public static ProductList addDisplay(){
 
-		public static ProductList addDisplay(){
+		ProductList inventoryList = new ProductList();
 
-		//Product product = new Product();
-		ProductList tempProdList = new ProductList();
-
-		//String upc = product.getUpc();
-		//product.setUpc(upc);
 		boolean isValid = false;
 
 		while (!isValid){
@@ -66,11 +67,11 @@ public class SalesDisplay
 			System.out.print("Enter a UPC code: ");
 			String upc = sc.nextLine();
 
-			for (Product p : tempProdList.getProducts())
+			for (Product p : inventoryList.getProducts())
 			{
 				if(p.getUpc().equals(upc) ){
 					isValid = true;
-					break;
+					addToInvoiceList[0].setUPC();
 				}
 				else {
 					System.out.println("Error! The UPC code was not found.");
@@ -78,8 +79,8 @@ public class SalesDisplay
 
 			}
 		}
-			return tempProdList;
-		}
+			return invoiceList;
+	}
 
 	public static ProductList removeDisplay(){
 
