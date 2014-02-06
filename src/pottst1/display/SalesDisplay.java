@@ -13,7 +13,9 @@ package pottst1.display;
 import pottst1.data.Product;
 import pottst1.data.*;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
+import java.lang.String;
 
 /**
  * Describe what the class actually does here for the javadoc.
@@ -29,7 +31,7 @@ public class SalesDisplay
 	 * Describe what this method does for the javadoc.
 	 */
 
-	public static void initialDisplay()
+	public void initialDisplay()
 	{
 
 		System.out.println("Sales Display\n");
@@ -58,10 +60,11 @@ public class SalesDisplay
 
 
 
-	public static ProductList addDisplay()
+	public Product[] addDisplay()
 	{
 
-		ProductList inventoryList = new ProductList();
+		invoiceList = new Product[1000];
+		invoiceSize = 0;
 
 		boolean isValid = false;
 
@@ -72,12 +75,18 @@ public class SalesDisplay
 			System.out.print("Enter a UPC code: ");
 			String upc = sc.nextLine();
 
-			for (Product p : inventoryList.getProducts())
+			for (Product p : invoiceList)
 			{
 				if (p.getUpc().equals(upc))
 				{
 					isValid = true;
-					inventoryList[0].setUPC();
+
+					invoiceList[0] = new Product();
+					invoiceList[0].setUpc(upc);
+					invoiceList[0].setDescription("Street Fighter");
+					invoiceList[0].setPrice(new BigDecimal(40.00));
+					invoiceList[0].setQuantity(1);
+					invoiceSize++;
 				}
 				else
 				{

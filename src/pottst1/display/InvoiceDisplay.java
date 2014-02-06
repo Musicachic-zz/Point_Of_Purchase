@@ -1,6 +1,6 @@
-package pottst1.display;
+/*package pottst1.display;
 
-/*         ====================================================
+*//*         ====================================================
 *          # Name: Teresa Potts (POTTST1)
 *          # Date: 2/3/14
 *          # Course Name: CITP 290
@@ -8,7 +8,7 @@ package pottst1.display;
 *          ====================================================
 *
 *
-*/
+*//*
 
 import pottst1.data.*;
 import pottst1.display.SalesDisplay;
@@ -32,10 +32,10 @@ public class InvoiceDisplay
 		System.out.println("______________________________");
 
 
-/*		for (int i = 0; i < invoice.length; i++)
+*//*		for (int i = 0; i < invoice.length; i++)
 		{
 			System.out.println(invoice[i]);
-		}*/
+		}*//*
 
 		for (Product anInvoice : invoice)
 		{
@@ -46,4 +46,4 @@ public class InvoiceDisplay
 		System.out.println();
 	}
 
-}
+}*/
