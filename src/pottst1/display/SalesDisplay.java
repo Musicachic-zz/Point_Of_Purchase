@@ -10,9 +10,9 @@
 
 package pottst1.display;
 
+import pottst1.data.Product;
 import pottst1.data.*;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,13 +23,14 @@ import java.util.Scanner;
 
 public class SalesDisplay
 {
+	private Product[] invoiceList;
+	private int invoiceSize;
 	/**
 	 * Describe what this method does for the javadoc.
 	 */
 
-
-
-	public static void initialDisplay(){
+	public static void initialDisplay()
+	{
 
 		System.out.println("Sales Display\n");
 
@@ -54,14 +55,18 @@ public class SalesDisplay
 			System.exit(0);
 		}
 	}
-	private Product[] invoiceList;
-	public static ProductList addDisplay(){
+
+
+
+	public static ProductList addDisplay()
+	{
 
 		ProductList inventoryList = new ProductList();
 
 		boolean isValid = false;
 
-		while (!isValid){
+		while (!isValid)
+		{
 
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter a UPC code: ");
@@ -69,20 +74,23 @@ public class SalesDisplay
 
 			for (Product p : inventoryList.getProducts())
 			{
-				if(p.getUpc().equals(upc) ){
+				if (p.getUpc().equals(upc))
+				{
 					isValid = true;
-					addToInvoiceList[0].setUPC();
+					inventoryList[0].setUPC();
 				}
-				else {
+				else
+				{
 					System.out.println("Error! The UPC code was not found.");
 				}
 
 			}
 		}
-			return invoiceList;
+		return invoiceList;
 	}
 
-	public static ProductList removeDisplay(){
+	public static ProductList removeDisplay()
+	{
 
 		//Product product = new Product();
 		Scanner sc = new Scanner(System.in);
@@ -93,18 +101,21 @@ public class SalesDisplay
 
 		//String upc = null;
 
-		while (!isValid){
+		while (!isValid)
+		{
 			sc = new Scanner(System.in);
 			System.out.print("Enter a UPC code: ");
 			String upc = sc.nextLine();
 
 			for (Product p : tempProdList.getProducts())
 			{
-				if(p.getUpc().equals(upc) ){
+				if (p.getUpc().equals(upc))
+				{
 					isValid = true;
 					break;
 				}
-				else {
+				else
+				{
 					System.out.println("Error! The UPC code was not found.");
 				}
 
